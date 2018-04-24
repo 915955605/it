@@ -5,11 +5,11 @@ export PATH
 
 #定义变量
 #授权文件自动生成url
-APX=http://rs.91yun.pw/apx1.php
+APX=https://raw.githubusercontent.com/915955605/it/master/ruisu/apx1.php
 #安装包下载地址
-INSTALLPACK=https://github.com/91yun/serverspeeder/blob/test/91yunserverspeeder.tar.gz?raw=true
+INSTALLPACK=https://raw.githubusercontent.com/915955605/it/master/ruisu/91yunserverspeeder.tar.gz?raw=true
 #判断版本支持情况的地址
-CHECKSYSTEM=https://raw.githubusercontent.com/91yun/serverspeeder/test/serverspeederbin.txt
+CHECKSYSTEM=https://raw.githubusercontent.com/915955605/it/master/ruisu/serverspeederbin.txt
 #bin下载地址
 BIN=downloadurl
 
@@ -60,7 +60,7 @@ elif [ "$DISTRO" == "Ubuntu" ];then
 	apt-get update
 	apt-get install -y lsb-release curl
 else
-	echo "一键脚本暂时只支持centos，ubuntu和debian的安装，其他系统请选择手动安装http://www.91yun.org/serverspeeder91yun"
+	echo "一键脚本暂时只支持centos，ubuntu和debian的安装"
 	exit 1
 fi
 
@@ -89,7 +89,7 @@ echo "================================================="
 
 
 #下载支持的bin列表
-curl "http://soft.91yun.org/soft/serverspeeder/serverspeederbin.txt" -o serverspeederbin.txt || { echo "文件下载失败，自动退出，可以前往http://www.91yun.org/serverspeeder91yun手动下载安装包";exit 1; }
+curl "https://raw.githubusercontent.com/915955605/it/master/ruisu/serverspeederbin.txt" -o serverspeederbin.txt || { echo "文件下载失败，自动退出";exit 1; }
 
 
 
@@ -106,7 +106,7 @@ if [ $? == 1 ]; then
 
 		if [ $? == 1 ]; then
 			echo -e "\r\n"
-			echo "锐速暂不支持该内核，程序退出.自动安装判断比较严格，你可以到http://www.91yun.org/serverspeeder91yun手动下载安装文件尝试不同版本"
+			echo "锐速暂不支持该内核，程序退出.自动安装判断比较严格"
 			exit 1
 		fi
 		echo "没有完全匹配的内核，请选一个最接近的尝试，不确保一定成功,(如果有版本号重复的选项随便选一个就可以)"
@@ -122,7 +122,7 @@ if [ $? == 1 ]; then
 
 		if [ $? == 1 ]; then
 			echo -e "\r\n"
-			echo "锐速暂不支持该内核，程序退出.自动安装判断比较严格，你可以到http://www.91yun.org/serverspeeder91yun手动下载安装文件尝试不同版本"
+			echo "锐速暂不支持该内核，程序退出.请尝试更换内核"
 			exit 1
 		fi
 		echo "没有完全匹配的内核，请选一个最接近的尝试，不确保一定成功,(如果有版本号重复的选项随便选一个就可以)"
